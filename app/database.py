@@ -17,12 +17,12 @@ from datetime import datetime, timezone
 # Support DATABASE_URL env var (Postgres on Vercel, SQLite locally)
 DATABASE_URL = os.getenv("DATABASE_URL", "")
 if DATABASE_URL:
-    # PostgreSQL (Neon / Vercel Postgres)
     connect_args = {"sslmode": "require"} if "amazonaws" in DATABASE_URL or "neon" in DATABASE_URL else {}
     engine = create_engine(DATABASE_URL, echo=False, connect_args=connect_args)
 else:
-    # SQLite (local dev / demo)
-    DB_PATH = os.path.join(os.path.dirname(__file__), 'self_assessment.db')
+    # Use /tmp for Vercel (read-only fs) or local dir
+    db_dir = "/tmp" if os.getenv("VERCEL") else os.path.dirname(__file__)
+    DB_PATH = os.path.join(db_dir, 'self_assessment.db')
     engine = create_engine(f'sqlite:///{DB_PATH}', echo=False)
 
 Base = declarative_base()
