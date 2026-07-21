@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICC Self-Assessment — Sertifikasi Kompetensi BNSP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="all" />
+<style>
+:root {
+  --navy: #004B87;
+  --orange: #F47920;
+  --red: #E4002B;
+  --white: #FFFFFF;
+  --navy-dark: #003366;
+  --navy-light: #E8F0FE;
+  --orange-light: #FFF3E6;
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-500: #64748B;
+  --gray-700: #334155;
+  --gray-900: #0F172A;
+  --shadow: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--gray-900); min-height: 100vh; }
+.app-header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+  color: white; padding: 0 24px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow);
+}
+.app-header .logo { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
+.app-header .logo span { color: var(--orange); }
+.app-header .subtitle { font-size: 12px; opacity: 0.7; }
+.container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+.card {
+  background: white; border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 24px; margin-bottom: 16px;
+}
+.card-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--navy); }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--gray-700); }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 10px 14px; border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm); font-size: 14px; font-family: inherit;
+  transition: border-color .2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px var(--navy-light);
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px; border-radius: var(--radius-sm); font-size: 15px;
+  font-weight: 600; border: none; cursor: pointer; transition: all .2s;
+  text-decoration: none;
+}
+.btn-primary { background: var(--orange); color: white; }
+.btn-primary:hover { background: #E06A10; transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn-secondary { background: var(--navy); color: white; }
+.btn-secondary:hover { background: var(--navy-dark); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+.btn-outline:hover { background: var(--navy-light); }
+.btn-block { width: 100%; }
+.btn-lg { padding: 14px 28px; font-size: 16px; }
+.badge {
+  display: inline-block; padding: 4px 10px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+}
+.badge-navy { background: var(--navy-light); color: var(--navy); }
+.badge-orange { background: var(--orange-light); color: var(--orange); }
+.badge-green { background: #DCFCE7; color: #166534; }
+.badge-red { background: #FEE2E2; color: #991B1B; }
+.kkni-meter {
+  display: flex; gap: 4px; align-items: center; margin: 12px 0;
+}
+.kkni-level {
+  width: 36px; height: 36px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; font-size: 12px;
+  font-weight: 700; background: var(--gray-100); color: var(--gray-500);
+  transition: all .3s;
+}
+.kkni-level.active { background: var(--navy); color: white; transform: scale(1.15); }
+.kkni-level.current { background: var(--orange); color: white; }
+.progress-bar {
+  height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden; margin: 12px 0;
+}
+.progress-bar .fill { height: 100%; background: linear-gradient(90deg, var(--orange), var(--red)); border-radius: 4px; transition: width .5s; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.stat-card {
+  text-align: center; padding: 16px; border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-200);
+}
+.stat-value { font-size: 28px; font-weight: 800; color: var(--navy); }
+.stat-label { font-size: 12px; color: var(--gray-500); margin-top: 4px; }
+.radar-container { max-width: 300px; margin: 0 auto; }
+.gap-list { list-style: none; }
+.gap-list li { padding: 10px 0; border-bottom: 1px solid var(--gray-100); display: flex; align-items: start; gap: 10px; }
+.gap-list li:last-child { border: none; }
+.gap-list .icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.icon-check { background: #DCFCE7; color: #166534; }
+.icon-x { background: #FEE2E2; color: #991B1B; }
+.scheme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.scheme-card {
+  border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm);
+  padding: 16px; cursor: pointer; transition: all .2s;
+}
+.scheme-card:hover { border-color: var(--navy); box-shadow: var(--shadow); }
+.scheme-card.selected { border-color: var(--orange); background: var(--orange-light); }
+.scheme-card .level { font-size: 12px; font-weight: 600; color: var(--gray-500); }
+.scheme-card .name { font-weight: 600; margin: 4px 0; }
+.scheme-card .bidang { font-size: 12px; color: var(--gray-500); }
+.question-card {
+  background: white; border-radius: var(--radius); padding: 32px;
+  box-shadow: var(--shadow-lg); max-width: 680px; margin: 0 auto;
+}
+.question-header { display: flex; justify-content: space-between; margin-bottom: 12px; }
+.question-meta { font-size: 13px; color: var(--gray-500); }
+.question-text { font-size: 18px; font-weight: 600; line-height: 1.6; margin: 20px 0; }
+.question-hint { background: var(--navy-light); padding: 14px; border-radius: var(--radius-sm); font-size: 14px; margin: 16px 0; color: var(--gray-700); }
+.confidence-slider { margin: 20px 0; }
+.confidence-slider input[type="range"] { width: 100%; accent-color: var(--orange); }
+.confidence-value { text-align: center; font-size: 32px; font-weight: 800; color: var(--orange); }
+.evidence-box textarea { min-height: 80px; resize: vertical; }
+.recommendation-box {
+  background: linear-gradient(135deg, var(--navy-light), white);
+  border: 1px solid var(--navy); border-radius: var(--radius);
+  padding: 20px; margin: 16px 0; line-height: 1.7; font-size: 14px;
+}
+.recommendation-box p { margin-bottom: 8px; }
+.cta-box {
+  background: var(--orange); border-radius: var(--radius); padding: 20px;
+  text-align: center; color: white;
+}
+.cta-box h3 { margin-bottom: 12px; }
+.cta-box .btn { background: white; color: var(--orange); }
+.cta-box .btn:hover { background: var(--gray-100); }
+.hidden { display: none !important; }
+.page { animation: fadeIn .3s; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.spinner { width: 40px; height: 40px; border: 4px solid var(--gray-200); border-top-color: var(--navy); border-radius: 50%; animation: spin .8s linear infinite; margin: 20px auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Loading Screen ─── */
+.loading-screen {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 60vh; padding: 40px;
+}
+.loading-logo { text-align: center; }
+.loading-ring {
+  width: 80px; height: 80px; margin: 0 auto 24px; position: relative;
+  border-radius: 50%; background: conic-gradient(from 0deg, var(--navy), var(--orange), var(--red), var(--navy));
+  animation: spin 1.5s linear infinite; padding: 4px;
+}
+.loading-ring-inner {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: var(--gray-50);
+}
+.loading-text { margin-bottom: 20px; }
+.loading-icc { font-size: 36px; font-weight: 800; color: var(--navy); letter-spacing: -2px; }
+.loading-dot { font-size: 36px; font-weight: 800; color: var(--orange); }
+.loading-sub { font-size: 16px; color: var(--gray-500); font-weight: 500; }
+.loading-bar-container {
+  width: 200px; height: 3px; background: var(--gray-200);
+  border-radius: 4px; overflow: hidden; margin: 0 auto 12px;
+}
+.loading-bar {
+  height: 100%; width: 30%; background: linear-gradient(90deg, var(--navy), var(--orange));
+  border-radius: 4px; animation: loadingSlide 1.5s ease-in-out infinite;
+}
+@keyframes loadingSlide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+.loading-status { font-size: 14px; color: var(--gray-500); }
+/* ─── Error State ─── */
+.error-state {
+  text-align: center; padding: 60px 20px;
+}
+.error-state .icon { font-size: 48px; margin-bottom: 16px; }
+.error-state h2 { color: var(--gray-900); margin-bottom: 8px; }
+.error-state p { color: var(--gray-500); margin-bottom: 20px; }
+.empty-state { text-align: center; padding: 40px; color: var(--gray-500); }
+
+/* ─── Overlay Loading (tidak remove DOM) ─── */
+.overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .2s;
+}
+.overlay.hidden { display: none; }
+.overlay-box { text-align: center; }
+.overlay-ring {
+  width: 56px; height: 56px; margin: 0 auto 16px; position: relative;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--navy), var(--orange), var(--red), var(--navy));
+  animation: spin .9s linear infinite; padding: 3px;
+}
+.overlay-ring-inner {
+  width: 100%; height: 100%; border-radius: 50%; background: white;
+}
+.overlay-status { font-size: 15px; font-weight: 600; color: var(--gray-700); }
+.footer { text-align: center; padding: 24px; color: var(--gray-500); font-size: 13px; }
+@media (max-width: 640px) {
+  .container { padding: 16px 12px; }
+  .card { padding: 16px; }
+  .question-card { padding: 20px; }
+  .question-text { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div>
+    <div class="logo">ICC <span>Self-Assessment</span></div>
+    <div class="subtitle">Indonesian Certification Center — Sertifikasi BNSP</div>
+  </div>
+  <div id="userBadge" class="hidden" style="font-size:13px;">
+    <span id="userNameDisplay"></span>
+  </div>
+</header>
+
+<div id="loadingOverlay" class="overlay hidden">
+  <div class="overlay-box">
+    <div class="overlay-ring"><div class="overlay-ring-inner"></div></div>
+    <div class="overlay-status">Memproses...</div>
+  </div>
+</div>
+
+<main class="container" id="app">
+  <div class="page" id="page-profile">
+    <div class="card">
+      <div class="card-title">🔍 Profil Peserta</div>
+      <p style="color:var(--gray-500); margin-bottom: 20px;">
+        Isi profil Anda. Kami akan tentukan level KKNI yang sesuai dan rekomendasikan skema sertifikasi.
+      </p>
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="fName" placeholder="Contoh: Agung Nugraha" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="fEmail" placeholder="contoh@email.com" />
+      </div>
+      <div class="form-group">
+        <label>No. WhatsApp</label>
+        <input type="text" id="fPhone" placeholder="0853-2888-3511" />
+      </div>
+      <div class="form-group">
+        <label>Jabatan / Posisi</label>
+        <input type="text" id="fJabatan" placeholder="Contoh: Staff Pajak, HSE Supervisor" />
+      </div>
+      <div class="form-group">
+        <label>Perusahaan / Instansi</label>
+        <input type="text" id="fPerusahaan" placeholder="Contoh: Kemenkeu RI, PT Pertamina" />
+      </div>
+      <div class="form-group">
+        <label>Industri / Bidang</label>
+        <select id="fIndustri">
+          <option value="">Pilih industri...</option>
+          <option value="akuntansi">Akuntansi & Perpajakan</option>
+          <option value="k3">K3 & Keselamatan Kerja</option>
+          <option value="lingkungan">Lingkungan & Limbah</option>
+          <option value="administrasi">Administrasi & SDM</option>
+          <option value="teknologi-informasi">Teknologi Informasi</option>
+          <option value="industri">Industri & Teknik</option>
+          <option value="pemasaran">Pemasaran & Digital</option>
+          <option value="pelayanan">Pelayanan & Hospitality</option>
+          <option value="logistik">Logistik & Transportasi</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Pendidikan Terakhir</label>
+        <select id="fPendidikan">
+          <option value="SMA">SMA/SMK</option>
+          <option value="D3">D3</option>
+          <option value="S1">S1</option>
+          <option value="S2">S2</option>
+          <option value="S3">S3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Pengalaman Kerja (tahun)</label>
+        <input type="number" id="fPengalaman" value="2" min="0" max="50" />
+      </div>
+      <button class="btn btn-primary btn-block btn-lg" onclick="determineLevel()">
+        🔍 Tentukan Level KKNI & Mulai
+      </button>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  ICC Self-Assessment v1.0 — Indonesian Certification Center<br>
+  Jl. Patangpuluhan No.26A, Wirobrajan, Yogyakarta
+</footer>
+
+<script>
+// ─── State ───
+const state = {
+  user: null,
+  assessmentId: null,
+  level: 3,
+  schemeId: null,
+};
+
+const BASE = '/api';
+
+// ─── Navigation ───
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+  let page = document.getElementById(id);
+  if (!page) {
+    console.warn('Page not found:', id);
+    return;
+  }
+  page.classList.remove('hidden');
+}
+
+function render(html) {
+  document.getElementById('app').innerHTML = html;
+}
+
+var overlay = document.getElementById('loadingOverlay');
+function loading(status) {
+  overlay.querySelector('.overlay-status').textContent = status || 'Memproses...';
+  overlay.classList.remove('hidden');
+}
+function doneLoading() {
+  overlay.classList.add('hidden');
+}
+
+// ─── API with timeout ───
+async function api(path, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 25000); // 25s max wait
+  try {
+    const res = await fetch(BASE + path, {
+      headers: { 'Content-Type': 'application/json', ...options.headers },
+      signal: controller.signal,
+      ...options,
+    });
+    clearTimeout(timeout);
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error(err || res.statusText);
+    }
+    return res.json();
+  } catch (e) {
+    clearTimeout(timeout);
+    if (e.name === 'AbortError') {
+      throw new Error('Koneksi timeout. Silakan coba lagi.');
+    }
+    throw e;
+  }
+}
+
+// ─── Steps ───
+
+// Step 1: User Profile
+function showProfileForm() {
+  render(`<div class="page" id="page-profile">
+    <div class="card">
+      <div class="card-title">🔍 Profil Peserta</div>
+      <p style="color:var(--gray-500); margin-bottom:20px;">Isi profil Anda. Kami akan tentukan level KKNI yang sesuai dan rekomendasikan skema sertifikasi.</p>
+      <div class="form-group"><label>Nama Lengkap</label><input type="text" id="fName" placeholder="Contoh: Agung Nugraha" /></div>
+      <div class="form-group"><label>Email</label><input type="email" id="fEmail" placeholder="contoh@email.com" /></div>
+      <div class="form-group"><label>No. WhatsApp</label><input type="text" id="fPhone" placeholder="0853-2888-3511" /></div>
+      <div class="form-group"><label>Jabatan / Posisi</label><input type="text" id="fJabatan" placeholder="Contoh: Staff Pajak, HSE Supervisor" /></div>
+      <div class="form-group"><label>Perusahaan / Instansi</label><input type="text" id="fPerusahaan" placeholder="Contoh: Kemenkeu RI, PT Pertamina" /></div>
+      <div class="form-group"><label>Industri / Bidang</label>
+        <select id="fIndustri">
+          <option value="">Pilih industri...</option>
+          <option value="akuntansi">Akuntansi & Perpajakan</option>
+          <option value="k3">K3 & Keselamatan Kerja</option>
+          <option value="lingkungan">Lingkungan & Limbah</option>
+          <option value="administrasi">Administrasi & SDM</option>
+          <option value="teknologi-informasi">Teknologi Informasi</option>
+          <option value="industri">Industri & Teknik</option>
+          <option value="pemasaran">Pemasaran & Digital</option>
+          <option value="pelayanan">Pelayanan & Hospitality</option>
+          <option value="logistik">Logistik & Transportasi</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Pendidikan Terakhir</label>
+        <select id="fPendidikan">
+          <option value="SMA">SMA/SMK</option><option value="D3">D3</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Pengalaman Kerja (tahun)</label><input type="number" id="fPengalaman" value="2" min="0" max="50" /></div>
+      <button class="btn btn-primary btn-block btn-lg" onclick="determineLevel()">🔍 Tentukan Level KKNI & Mulai</button>
+    </div>
+  </div>`);
+}
+
+// Step 2: KKNI Level & Scheme Selection
+async function determineLevel() {
+  loading('Menganalisis profil dengan AI...');
+  const data = {
+    name: document.getElementById('fName').value,
+    email: document.getElementById('fEmail').value,
+    phone: document.getElementById('fPhone').value,
+    jabatan: document.getElementById('fJabatan').value,
+    perusahaan: document.getElementById('fPerusahaan').value,
+    industri: document.getElementById('fIndustri').value,
+    pendidikan: document.getElementById('fPendidikan').value,
+    pengalaman_tahun: parseInt(document.getElementById('fPengalaman').value) || 0,
+  };
+
+  if (!data.name || !data.jabatan) {
+    showProfileForm();
+    alert('Nama dan Jabatan wajib diisi');
+    return;
+  }
+
+  try {
+    // Create user
+    const user = await api('/users', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    state.user = user;
+
+    // Determine KKNI level
+    const levelData = await api('/determine-level', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+    state.level = levelData.level;
+
+    // Show level & scheme selection
+    doneLoading();
+    renderSchemeSelect(levelData, data.jabatan, data.perusahaan);
+  } catch (e) {
+    doneLoading();
+    render(`<div class="error-state page">
+      <div class="icon">⚠️</div>
+      <h2>Gagal Terhubung</h2>
+      <p>${e.message || 'Server sedang sibuk. Coba refresh halaman.'}</p>
+      <button class="btn btn-primary" onclick="showProfileForm()">🔄 Coba Lagi</button>
+    </div>`);
+  }
+}
+
+function renderSchemeSelect(levelData, jabatan, perusahaan) {
+  const levels = levelData.all_levels || [];
+  const schemes = levelData.schemes || [];
+
+  const levelHTML = levels.map(l => `
+    <div class="kkni-level ${l.level === state.level ? 'active' : ''} ${l.level <= state.level ? 'current' : ''}"
+         title="${l.jenjang}">${l.level}</div>
+  `).join('');
+
+  const schemeHTML = schemes.length > 0 ? schemes.map(s => `
+    <div class="scheme-card" onclick="selectScheme(this, ${s.id})" data-id="${s.id}">
+      <div class="level">Level ${levelData.level} — ${levelData.jenjang}</div>
+      <div class="name">${s.name}</div>
+      <div class="bidang">${s.bidang || ''}</div>
+    </div>
+  `).join('') : '<div class="empty-state">Belum ada skema untuk level ini. Pilih level lain atau lanjut dengan skema custom.</div>';
+
+  const res = `
+  <div class="page" id="page-schemes">
+    <div class="card">
+      <div class="card-title">📊 Level KKNI yang Direkomendasikan</div>
+      <p style="color: var(--gray-500); margin-bottom: 8px;">
+        Berdasarkan profil Anda sebagai <strong>${jabatan}</strong> di <strong>${perusahaan}</strong>:
+      </p>
+      <div style="display: flex; align-items: center; gap: 16px; margin: 12px 0;">
+        <div style="font-size: 48px; font-weight: 800; color: var(--orange);">${state.level}</div>
+        <div>
+          <div style="font-weight: 700; font-size: 16px;">${levelData.jenjang}</div>
+          <div style="font-size: 13px; color: var(--gray-500);">${levelData.reasoning || 'Berdasarkan analisis jabatan dan pengalaman'}</div>
+        </div>
+      </div>
+      <div class="kkni-meter">${levelHTML}</div>
+      <p style="font-size:13px; color:var(--gray-500);">
+        <button class="btn btn-outline" style="padding:6px 12px;font-size:12px;" onclick="showProfileForm()">← Ubah Profil</button>
+        &nbsp;Pilih level lain jika tidak sesuai.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 Skema yang Tersedia (Level ${state.level})</div>
+      <p style="color: var(--gray-500); margin-bottom: 12px;">Pilih skema sertifikasi yang ingin di-self-assessment:</p>
+      <div class="scheme-grid">${schemeHTML}</div>
+    </div>
+
+    <button class="btn btn-primary btn-block btn-lg" onclick="startAssessment()" id="btnStart" disabled>
+      🚀 Mulai Self-Assessment
+    </button>
+    <p style="font-size:13px;color:var(--gray-500);text-align:center;margin-top:8px;">
+      Pilih skema di atas terlebih dahulu
+    </p>
+  </div>`;
+  render(res);
+}
+
+function selectScheme(el, id) {
+  document.querySelectorAll('.scheme-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.schemeId = id;
+  document.getElementById('btnStart').disabled = false;
+  document.querySelector('#btnStart + p')?.remove();
+}
+
+// Step 3: Assessment Questions
+async function startAssessment() {
+  if (!state.schemeId) return alert('Pilih skema terlebih dahulu');
+  loading('Menyiapkan pertanyaan assessment...');
+
+  try {
+    const assessment = await api('/assessments', {
+      method: 'POST',
+      body: JSON.stringify({
+        user_id: state.user.id,
+        scheme_id: state.schemeId,
+      }),
+    });
+    state.assessmentId = assessment.assessment_id;
+    doneLoading();
+    renderQuestion(assessment.next_question);
+  } catch (e) {
+    doneLoading();
+    render(`<div class="card"><h3>Error: ${e.message}</h3></div>`);
+  }
+}
+
+function renderQuestion(q) {
+  if (!q) {
+    showResults();
+    return;
+  }
+
+  const { criterion_id, unit_title, element_title, kuk_text, question, context_hint, what_to_prove, competence_type, progress } = q;
+  const pct = progress ? Math.round((progress.answered / progress.total) * 100) : 0;
+
+  let confidence = 50;
+
+  const res = `
+  <div class="page" id="page-assessment">
+    <div style="max-width:680px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span class="badge badge-navy">Progress: ${progress.answered}/${progress.total} KUK</span>
+        <span class="badge badge-orange">${pct}%</span>
+      </div>
+      <div class="progress-bar"><div class="fill" style="width:${pct}%"></div></div>
+
+      <div class="question-card">
+        <div class="question-header">
+          <span class="question-meta">${unit_title} — ${element_title}</span>
+          <span class="badge ${competence_type === 'skill' ? 'badge-orange' : 'badge-navy'}">${competence_type}</span>
+        </div>
+
+        <div style="font-size:13px;color:var(--gray-500);margin-bottom:12px;">
+          KUK: ${kuk_text}
+        </div>
+
+        <div class="question-text">${question}</div>
+
+        ${context_hint ? `<div class="question-hint">💡 ${context_hint}</div>` : ''}
+        ${what_to_prove ? `<div class="question-hint">📋 ${what_to_prove}</div>` : ''}
+
+        <div class="confidence-slider">
+          <label style="font-weight:600;font-size:14px;">Seberapa yakin Anda menguasai kompetensi ini?</label>
+          <div class="confidence-value" id="confidenceDisplay">50</div>
+          <input type="range" min="0" max="100" value="50" oninput="document.getElementById('confidenceDisplay').textContent=this.value" />
+        </div>
+
+        <div class="evidence-box">
+          <label style="font-weight:600;font-size:14px;">Bukti / Evidence (opsional)</label>
+          <textarea id="evidenceInput" placeholder="Contoh: Saya sudah menerapkan ini setiap hari dalam 2 tahun terakhir... Atau upload link dokumen portofolio."></textarea>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:20px;">
+          <button class="btn btn-primary btn-block btn-lg" onclick="submitAnswer(${criterion_id})" id="btnSubmit">
+            ✅ Jawab & Lanjut
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  render(res);
+}
+
+async function submitAnswer(criterionId) {
+  const confidence = parseInt(document.querySelector('.confidence-slider input[type="range"]').value);
+  const evidence = document.getElementById('evidenceInput')?.value || '';
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true;
+  btn.textContent = '⏳ Menyimpan...';
+
+  try {
+    const result = await api(`/assessments/${state.assessmentId}/answer`, {
+      method: 'POST',
+      body: JSON.stringify({
+        criterion_id: criterionId,
+        confidence: confidence,
+        evidence: evidence,
+      }),
+    });
+
+    if (result.status === 'completed') {
+      showResults();
+    } else if (result.next_question) {
+      renderQuestion(result.next_question);
+    } else {
+      showResults();
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = '✅ Jawab & Lanjut';
+    alert('Error: ' + e.message);
+  }
+}
+
+// Step 4: Results
+async function showResults() {
+  loading('Memuat hasil assessment...');
+  try {
+    const r = await api(`/assessments/${state.assessmentId}/results`);
+
+    const pct = Math.round(r.overall_score);
+    const masteryPct = r.gap_summary.total_kuk > 0 ? Math.round((r.gap_summary.mastered / r.gap_summary.total_kuk) * 100) : 0;
+    const statusBadge = r.is_competent ? '<span class="badge badge-green">✅ Kompeten</span>' : '<span class="badge badge-red">🔄 Perlu Pengembangan</span>';
+
+    const gapHTML = (r.gap_kuk || []).map(g => `
+      <li><span class="icon icon-x">✕</span> <span>${g}</span></li>
+    `).join('');
+    const masteredHTML = (r.mastered_kuk || []).map(m => `
+      <li><span class="icon icon-check">✓</span> <span>${m}</span></li>
+    `).join('');
+
+    const elementHTML = (r.elements || []).map(e => `
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px;">
+          <span><strong>${e.element_title}</strong> (${e.criteria.filter(c=>c.answered).length}/${e.criteria.length} terjawab)</span>
+          <span style="font-weight:700;color:${e.element_score >= 70 ? 'var(--navy)' : 'var(--orange)'}">${e.element_score}%</span>
+        </div>
+        <div class="progress-bar"><div class="fill" style="width:${e.element_score}%"></div></div>
+      </div>
+    `).join('');
+
+    const schemesHTML = (r.next_schemes || []).map(s => `
+      <div class="scheme-card" style="cursor:default;">
+        <div class="level">Level ${s.kkni_level} — ${s.kkni_jenjang}</div>
+        <div class="name">${s.name}</div>
+      </div>
+    `).join('');
+
+    const res = `
+    <div class="page" id="page-results">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:60px;font-weight:800;color:${r.is_competent ? 'var(--navy)' : 'var(--orange)'}">${pct}%</div>
+        <div style="font-size:24px;font-weight:700;margin:8px 0;">${statusBadge}</div>
+        <div style="color:var(--gray-500);font-size:14px;">
+          ${r.scheme.name} — KKNI Level ${r.scheme.kkni_level} (${r.scheme.kkni_jenjang})
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value">${r.gap_summary.total_kuk}</div>
+          <div class="stat-label">Total KUK</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:#166534;">${r.gap_summary.mastered}</div>
+          <div class="stat-label">Dikuasai</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--orange);">${r.gap_summary.gap}</div>
+          <div class="stat-label">Gap</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--gray-500);">${r.gap_summary.unanswered || 0}</div>
+          <div class="stat-label">Belum Dijawab</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📊 Per Elemen Kompetensi</div>
+        ${elementHTML}
+      </div>
+
+      <div class="card">
+        <div class="card-title">💬 Rekomendasi Personal</div>
+        <div class="recommendation-box">${r.recommendation || '<p>Self-assessment selesai. Hubungi tim ICC untuk konsultasi hasil lebih lanjut.</p>'}</div>
+      </div>
+
+      ${r.gap_kuk && r.gap_kuk.length > 0 ? `
+      <div class="card">
+        <div class="card-title">🔄 Gap Kompetensi (Perlu Ditingkatkan)</div>
+        <ul class="gap-list">${gapHTML}</ul>
+      </div>` : ''}
+
+      ${r.mastered_kuk && r.mastered_kuk.length > 0 ? `
+      <div class="card">
+        <div class="card-title">✅ Kompetensi yang Sudah Dikuasai</div>
+        <ul class="gap-list">${masteredHTML}</ul>
+      </div>` : ''}
+
+      ${schemesHTML ? `
+      <div class="card">
+        <div class="card-title">📈 Rekomendasi Skema Selanjutnya</div>
+        <div class="scheme-grid">${schemesHTML}</div>
+      </div>` : ''}
+
+      <div class="cta-box">
+        <h3>🎯 Siap Ambil Sertifikasi?</h3>
+        <p style="margin-bottom:16px;opacity:0.9;">
+          Konsultasi gratis dengan tim ICC untuk jadwal, biaya, dan proses sertifikasi.
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="https://wa.me/6285328883511" target="_blank" class="btn btn-lg">
+            💬 Konsultasi WhatsApp
+          </a>
+          <button class="btn btn-outline btn-lg" onclick="showProfileForm()" style="background:white;color:var(--navy);border-color:white;">
+            🔄 Self-Assessment Ulang
+          </button>
+        </div>
+      </div>
+    </div>`;
+    doneLoading();
+    render(res);
+  } catch (e) {
+    doneLoading();
+    render(`<div class="card"><h3>Error loading results: ${e.message}</h3></div>`);
+  }
+}
+
+// ─── Init ───
+showProfileForm();
+</script>
+</body>
+</html>
