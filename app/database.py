@@ -14,8 +14,17 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from datetime import datetime, timezone
 
-DB_PATH = os.path.join(os.path.dirname(__file__), 'self_assessment.db')
-engine = create_engine(f'sqlite:///{DB_PATH}', echo=False)
+# Support DATABASE_URL env var (Postgres on Vercel, SQLite locally)
+DATABASE_URL = os.getenv("DATABASE_URL", "")
+if DATABASE_URL:
+    # PostgreSQL (Neon / Vercel Postgres)
+    connect_args = {"sslmode": "require"} if "amazonaws" in DATABASE_URL or "neon" in DATABASE_URL else {}
+    engine = create_engine(DATABASE_URL, echo=False, connect_args=connect_args)
+else:
+    # SQLite (local dev / demo)
+    DB_PATH = os.path.join(os.path.dirname(__file__), 'self_assessment.db')
+    engine = create_engine(f'sqlite:///{DB_PATH}', echo=False)
+
 Base = declarative_base()
 SessionLocal = sessionmaker(bind=engine)
 
