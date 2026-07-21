@@ -1,0 +1,1053 @@
+{
+  "metadata": {
+    "source": "AMC data 2022-2025 (2000+ peserta) + KKNI Perpres 8/2012",
+    "last_updated": "2026-07-21",
+    "skema_count": 80,
+    "level_range": "1-9"
+  },
+  "skema_levels": {
+    "Skema Teknisi Akuntansi Junior": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "akuntansi",
+      "keyword": [
+        "teknisi akuntansi junior",
+        "junior akuntan"
+      ],
+      "next_level": [
+        "Skema Teknisi Akuntansi Madya"
+      ],
+      "previous_level": []
+    },
+    "Skema Teknisi Akuntansi Madya": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi/Analis Madya",
+      "bidang": "akuntansi",
+      "keyword": [
+        "teknisi akuntansi madya",
+        "madya akuntansi"
+      ],
+      "next_level": [
+        "Skema Teknisi Akuntansi Ahli"
+      ],
+      "previous_level": [
+        "Skema Teknisi Akuntansi Junior"
+      ]
+    },
+    "Skema Teknisi Akuntansi Ahli": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "akuntansi",
+      "keyword": [
+        "teknisi akuntansi ahli",
+        "ahli akuntansi"
+      ],
+      "next_level": [
+        "Skema Manajemen Sertifikasi Kompetensi"
+      ],
+      "previous_level": [
+        "Skema Teknisi Akuntansi Madya"
+      ]
+    },
+    "Skema Teknisi Perpajakan": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "perpajakan",
+      "keyword": [
+        "perpajakan",
+        "pajak"
+      ],
+      "next_level": [
+        "Skema Teknisi Akuntansi Madya"
+      ],
+      "previous_level": []
+    },
+    "K3 Spesialis": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "k3",
+      "keyword": [
+        "k3 spesialis",
+        "spesialis k3"
+      ],
+      "next_level": [
+        "Skema Ahli K3 Umum BNSP"
+      ],
+      "previous_level": []
+    },
+    "Skema Ahli K3 Umum BNSP": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "k3",
+      "keyword": [
+        "ahli k3 umum",
+        "k3 umum",
+        "ahli k3"
+      ],
+      "next_level": [
+        "Skema Asesor Kompetensi",
+        "Skema Manajemen Sertifikasi Kompetensi"
+      ],
+      "previous_level": [
+        "K3 Spesialis"
+      ]
+    },
+    "Skema Ahli K3 Lingkungan": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "k3-lingkungan",
+      "keyword": [
+        "ahli k3 lingkungan",
+        "k3 lingkungan"
+      ],
+      "next_level": [
+        "Skema Asesor Kompetensi"
+      ],
+      "previous_level": [
+        "Skema Pengelolaan Hygiene Sanitasi"
+      ]
+    },
+    "Skema Ahli Muda K3 Konstruksi": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "k3",
+      "keyword": [
+        "k3 konstruksi",
+        "k3 muda konstruksi"
+      ],
+      "next_level": [
+        "Skema Ahli K3 Umum BNSP"
+      ],
+      "previous_level": []
+    },
+    "Skema Pengelolaan Hygiene Sanitasi": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "kesehatan-lingkungan",
+      "keyword": [
+        "hygiene sanitasi",
+        "sanitasi"
+      ],
+      "next_level": [
+        "Skema Ahli K3 Lingkungan"
+      ],
+      "previous_level": []
+    },
+    "Petugas P3K": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "k3",
+      "keyword": [
+        "petugas p3k",
+        "p3k",
+        "kemnaker p3k"
+      ],
+      "next_level": [
+        "K3 Spesialis"
+      ],
+      "previous_level": []
+    },
+    "KMK Damkar D": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "k3",
+      "keyword": [
+        "damkar",
+        "pemadam kebakaran"
+      ],
+      "next_level": [
+        "Petugas P3K"
+      ],
+      "previous_level": []
+    },
+    "Skema Operator Pengumpulan Limbah B3": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "lingkungan",
+      "keyword": [
+        "operator limbah",
+        "pengumpulan limbah b3"
+      ],
+      "next_level": [
+        "Skema Manajer Pengumpulan Limbah B3"
+      ],
+      "previous_level": []
+    },
+    "Skema Manajer Pengumpulan Limbah B3": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "lingkungan",
+      "keyword": [
+        "manajer limbah",
+        "manajer pengumpulan limbah"
+      ],
+      "next_level": [
+        "Skema Ahli K3 Lingkungan"
+      ],
+      "previous_level": [
+        "Skema Operator Pengumpulan Limbah B3"
+      ]
+    },
+    "Skema Penanggung Jawab Pengendalian Pencemaran Udara": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "lingkungan",
+      "keyword": [
+        "pppu",
+        "pencemaran udara"
+      ],
+      "next_level": [
+        "Skema Ahli K3 Lingkungan"
+      ],
+      "previous_level": []
+    },
+    "Skema Penanggung Jawab Pengendalian Pencemaran Air": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "lingkungan",
+      "keyword": [
+        "pencemaran air"
+      ],
+      "next_level": [
+        "Skema Ahli K3 Lingkungan"
+      ],
+      "previous_level": []
+    },
+    "Skema Penanggung Jawab Operasional Pengolahan Air Limbah": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "lingkungan",
+      "keyword": [
+        "popal",
+        "air limbah"
+      ],
+      "next_level": [
+        "Skema Manajer Pengumpulan Limbah B3"
+      ],
+      "previous_level": []
+    },
+    "Skema Penyelidikan Insiden Tingkat Lanjut": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "lingkungan",
+      "keyword": [
+        "penyelidikan insiden"
+      ],
+      "next_level": [],
+      "previous_level": [
+        "Petugas P3K"
+      ]
+    },
+    "Skema Office Administrative": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "administrasi",
+      "keyword": [
+        "office admin",
+        "office administrative"
+      ],
+      "next_level": [
+        "Skema Office Administrative Madya"
+      ],
+      "previous_level": []
+    },
+    "Skema Office Administrative Madya": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "administrasi",
+      "keyword": [
+        "office administrative madya"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": [
+        "Skema Office Administrative"
+      ]
+    },
+    "Skema Staf Administrasi": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "administrasi",
+      "keyword": [
+        "staf administrasi",
+        "staff administrasi"
+      ],
+      "next_level": [
+        "Skema Office Administrative Madya"
+      ],
+      "previous_level": []
+    },
+    "Skema Pengelola Administrasi Kantor": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "administrasi",
+      "keyword": [
+        "pengelola administrasi"
+      ],
+      "next_level": [
+        "Skema Office Administrative Madya"
+      ],
+      "previous_level": [
+        "Skema Staf Administrasi"
+      ]
+    },
+    "Skema Staf SDM": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "sdm",
+      "keyword": [
+        "staf sdm",
+        "staff sdm",
+        "staff hr"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Manajemen SDM": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "sdm",
+      "keyword": [
+        "manajemen sdm",
+        "hr manager",
+        "human resources"
+      ],
+      "next_level": [
+        "Skema Asesor Kompetensi"
+      ],
+      "previous_level": [
+        "Skema Staf SDM",
+        "HR BNSP"
+      ]
+    },
+    "Skema Corporate Secretary": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "administrasi",
+      "keyword": [
+        "corporate secretary"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Secretary": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "administrasi",
+      "keyword": [
+        "secretary",
+        "sekretaris"
+      ],
+      "next_level": [
+        "Skema Corporate Secretary"
+      ],
+      "previous_level": []
+    },
+    "Skema Data Analyst": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "data analyst"
+      ],
+      "next_level": [
+        "Skema Data Scientist"
+      ],
+      "previous_level": []
+    },
+    "Skema Associate Data Analyst": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "associate data analyst"
+      ],
+      "next_level": [
+        "Skema Data Analyst"
+      ],
+      "previous_level": []
+    },
+    "Skema Data Scientist": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "data scientist"
+      ],
+      "next_level": [
+        "Skema Asesor Kompetensi"
+      ],
+      "previous_level": [
+        "Skema Data Analyst"
+      ]
+    },
+    "Skema Big Data Scientist": {
+      "kkni_level": 7,
+      "jenjang": "Ahli Madya",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "big data scientist"
+      ],
+      "next_level": [],
+      "previous_level": [
+        "Skema Data Scientist"
+      ]
+    },
+    "Skema UI/UX Designer": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "ui/ux",
+        "ux designer"
+      ],
+      "next_level": [
+        "Skema Asesor Kompetensi"
+      ],
+      "previous_level": []
+    },
+    "Skema IT Auditor": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "it auditor"
+      ],
+      "next_level": [
+        "Skema Manajemen Sertifikasi Kompetensi"
+      ],
+      "previous_level": []
+    },
+    "Skema Staf Operasi Pusat Data": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "pusat data",
+        "data center"
+      ],
+      "next_level": [
+        "Skema Data Analyst"
+      ],
+      "previous_level": []
+    },
+    "Skema Analis GIS": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "analis gis",
+        "gis"
+      ],
+      "next_level": [
+        "Skema Ahli Muda GIS"
+      ],
+      "previous_level": []
+    },
+    "Skema Ahli Muda GIS": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "teknologi-informasi",
+      "keyword": [
+        "ahli gis",
+        "ahli muda gis"
+      ],
+      "next_level": [],
+      "previous_level": [
+        "Skema Analis GIS"
+      ]
+    },
+    "Skema Desainer Multimedia Muda": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "kreatif",
+      "keyword": [
+        "desainer multimedia"
+      ],
+      "next_level": [
+        "Skema UI/UX Designer"
+      ],
+      "previous_level": []
+    },
+    "Skema Video Editor": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "kreatif",
+      "keyword": [
+        "video editor"
+      ],
+      "next_level": [
+        "Skema Desainer Multimedia Muda"
+      ],
+      "previous_level": []
+    },
+    "Skema Digital Marketing": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "pemasaran",
+      "keyword": [
+        "digital marketing"
+      ],
+      "next_level": [
+        "Skema Marketing BNSP"
+      ],
+      "previous_level": []
+    },
+    "Marketing BNSP": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "pemasaran",
+      "keyword": [
+        "marketing bnsp"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": [
+        "Skema Digital Marketing"
+      ]
+    },
+    "Project Management BNSP": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "manajemen",
+      "keyword": [
+        "project management bnsp",
+        "manajemen proyek"
+      ],
+      "next_level": [
+        "Skema Manajemen Sertifikasi Kompetensi"
+      ],
+      "previous_level": []
+    },
+    "Risk Management BNSP": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "manajemen",
+      "keyword": [
+        "risk management bnsp",
+        "manajemen risiko"
+      ],
+      "next_level": [
+        "Skema Manajemen Sertifikasi Kompetensi"
+      ],
+      "previous_level": []
+    },
+    "Training Officer BNSP": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "sdm",
+      "keyword": [
+        "training officer"
+      ],
+      "next_level": [
+        "Instruktur BNSP"
+      ],
+      "previous_level": []
+    },
+    "Instruktur BNSP": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "pendidikan",
+      "keyword": [
+        "instruktur bnsp",
+        "trainer bnsp"
+      ],
+      "next_level": [
+        "Skema Asesor Kompetensi"
+      ],
+      "previous_level": [
+        "Training Officer BNSP"
+      ]
+    },
+    "Skema TOT Level 4": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "pendidikan",
+      "keyword": [
+        "tot level",
+        "training of trainer"
+      ],
+      "next_level": [
+        "Instruktur BNSP"
+      ],
+      "previous_level": []
+    },
+    "Skema Asesor Kompetensi": {
+      "kkni_level": 7,
+      "jenjang": "Ahli Madya",
+      "bidang": "asesmen",
+      "keyword": [
+        "asesor kompetensi",
+        "assessor bnsp"
+      ],
+      "next_level": [
+        "Skema Manajemen Sertifikasi Kompetensi"
+      ],
+      "previous_level": [
+        "Instruktur BNSP",
+        "Skema Ahli K3 Umum BNSP",
+        "Skema Manajemen SDM"
+      ]
+    },
+    "Skema Manajemen Sertifikasi Kompetensi": {
+      "kkni_level": 8,
+      "jenjang": "Ahli Utama",
+      "bidang": "manajemen-sertifikasi",
+      "keyword": [
+        "manajemen sertifikasi kompetensi"
+      ],
+      "next_level": [],
+      "previous_level": [
+        "Skema Asesor Kompetensi"
+      ]
+    },
+    "Skema Operator Alat Berat": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "operator alat berat",
+        "alat berat"
+      ],
+      "next_level": [
+        "K3 Spesialis"
+      ],
+      "previous_level": []
+    },
+    "Skema Felling & Bucking Chainsaw": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "kehutanan",
+      "keyword": [
+        "felling",
+        "bucking",
+        "chainsaw"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Pelaksana Pembibitan": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "kehutanan",
+      "keyword": [
+        "pembibitan",
+        "pelaksana pembibitan"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Drafter CAD 2D": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "drafter cad",
+        "cad 2d"
+      ],
+      "next_level": [
+        "Skema Teknisi Tata Udara Sentral dan Chiller"
+      ],
+      "previous_level": []
+    },
+    "Skema Welding Inspector": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "industri",
+      "keyword": [
+        "welding inspector"
+      ],
+      "next_level": [
+        "Skema Welding Supervisor"
+      ],
+      "previous_level": []
+    },
+    "Skema Welding Supervisor": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "industri",
+      "keyword": [
+        "welding supervisor"
+      ],
+      "next_level": [],
+      "previous_level": [
+        "Skema Welding Inspector"
+      ]
+    },
+    "Skema Pipe Fitter": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "pipe fitter"
+      ],
+      "next_level": [
+        "Skema Welding Inspector"
+      ],
+      "previous_level": []
+    },
+    "Skema Inspektur Kelistrikan": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "industri",
+      "keyword": [
+        "inspektur kelistrikan",
+        "kelistrikan"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Inspektur Rotating Equipment": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "industri",
+      "keyword": [
+        "rotating equipment"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Teknisi Tata Udara Sentral dan Chiller": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "tata udara",
+        "chiller",
+        "hvac"
+      ],
+      "next_level": [
+        "Skema Inspektur Kelistrikan"
+      ],
+      "previous_level": []
+    },
+    "Skema Enjineer Instrumentasi Sistem Alat Ukur": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "industri",
+      "keyword": [
+        "enjineer instrumentasi",
+        "instrumentasi"
+      ],
+      "next_level": [
+        "Skema Inspektur Kelistrikan"
+      ],
+      "previous_level": []
+    },
+    "Skema Pengawas & Teknisi Instrumentasi": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "pengawas instrumentasi",
+        "teknisi instrumentasi"
+      ],
+      "next_level": [
+        "Skema Enjineer Instrumentasi Sistem Alat Ukur"
+      ],
+      "previous_level": []
+    },
+    "Skema Pengawas & Teknisi Pressure Relive Device": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "pressure relive"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Insulation Fitter": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "insulation fitter"
+      ],
+      "next_level": [
+        "Skema Pipe Fitter"
+      ],
+      "previous_level": []
+    },
+    "Skema Scafolding": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "scaffold",
+        "scaffolding"
+      ],
+      "next_level": [
+        "K3 Spesialis"
+      ],
+      "previous_level": []
+    },
+    "Skema Basic Logistik": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "logistik",
+      "keyword": [
+        "logistik",
+        "basic logistik"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Hydraulic & Pneumatik": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "hydraulic",
+        "pneumatik"
+      ],
+      "next_level": [
+        "Skema Enjineer Instrumentasi Sistem Alat Ukur"
+      ],
+      "previous_level": []
+    },
+    "Skema Mengemudi Kendaraan Bermotor Angkutan Barang": {
+      "kkni_level": 2,
+      "jenjang": "Operator Terampil",
+      "bidang": "logistik",
+      "keyword": [
+        "mengemudi",
+        "angkutan barang"
+      ],
+      "next_level": [
+        "Skema Basic Logistik"
+      ],
+      "previous_level": []
+    },
+    "Skema Pelayanan Prima": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "pelayanan",
+      "keyword": [
+        "pelayanan prima",
+        "excellent service"
+      ],
+      "next_level": [
+        "Skema Public Speaking"
+      ],
+      "previous_level": []
+    },
+    "Skema Powerfull Business Presentation": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "pelayanan",
+      "keyword": [
+        "business presentation",
+        "presentation"
+      ],
+      "next_level": [
+        "Skema Public Speaking"
+      ],
+      "previous_level": []
+    },
+    "Skema Public Speaking": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "pelayanan",
+      "keyword": [
+        "public speaking"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Penyunting Naskah & Substantif": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "kreatif",
+      "keyword": [
+        "penyunting",
+        "naskah",
+        "substantif"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Jenjang 4 Bidang Kewirausahaan Industri": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "kewirausahaan",
+      "keyword": [
+        "kewirausahaan industri"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Penjamah Makanan": {
+      "kkni_level": 2,
+      "jenjang": "Operator Dasar",
+      "bidang": "kesehatan",
+      "keyword": [
+        "penjamah makanan",
+        "food handler"
+      ],
+      "next_level": [
+        "Skema Pengelolaan Hygiene Sanitasi"
+      ],
+      "previous_level": []
+    },
+    "Skema Public Area Cleaner": {
+      "kkni_level": 2,
+      "jenjang": "Operator Dasar",
+      "bidang": "kebersihan",
+      "keyword": [
+        "public area cleaner"
+      ],
+      "next_level": [
+        "Skema Pelayanan Prima"
+      ],
+      "previous_level": []
+    },
+    "Skema Customer Service Officer": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "pelayanan",
+      "keyword": [
+        "customer service"
+      ],
+      "next_level": [
+        "Skema Pelayanan Prima"
+      ],
+      "previous_level": []
+    },
+    "Skema Okupasi Demi Chef": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "kuliner",
+      "keyword": [
+        "demi chef",
+        "chef"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Pelaksana Program Pemberdayaan Masyarakat": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "sosial",
+      "keyword": [
+        "pemberdayaan masyarakat"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Mengukur dan Kalibrasi Flowmeter": {
+      "kkni_level": 4,
+      "jenjang": "Teknisi Terampil",
+      "bidang": "industri",
+      "keyword": [
+        "flowmeter",
+        "kalibrasi"
+      ],
+      "next_level": [
+        "Skema Enjineer Instrumentasi Sistem Alat Ukur"
+      ],
+      "previous_level": []
+    },
+    "Skema Inspektor Pertanian Organik Ternak": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "pertanian",
+      "keyword": [
+        "pertanian organik",
+        "inspektor pertanian"
+      ],
+      "next_level": [],
+      "previous_level": []
+    },
+    "Skema Ahli Perencanaan Pengelolaan Kawasan Konservasi Perairan": {
+      "kkni_level": 7,
+      "jenjang": "Ahli Madya",
+      "bidang": "lingkungan",
+      "keyword": [
+        "kawasan konservasi perairan"
+      ],
+      "next_level": [],
+      "previous_level": [
+        "Skema Analis GIS"
+      ]
+    },
+    "Skema Auditor Lingkungan Hidup": {
+      "kkni_level": 6,
+      "jenjang": "Ahli Pratama",
+      "bidang": "lingkungan",
+      "keyword": [
+        "auditor lingkungan"
+      ],
+      "next_level": [
+        "Skema Ahli Perencanaan Pengelolaan Kawasan Konservasi Perairan"
+      ],
+      "previous_level": [
+        "Skema Penanggung Jawab Pengendalian Pencemaran Udara"
+      ]
+    },
+    "Skema Managerial Public Relations": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "komunikasi",
+      "keyword": [
+        "public relations",
+        "pr"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Analisis Jabatan dan Analisis Beban Kerja": {
+      "kkni_level": 5,
+      "jenjang": "Teknisi Madya",
+      "bidang": "sdm",
+      "keyword": [
+        "analisis jabatan",
+        "anjab",
+        "abk"
+      ],
+      "next_level": [
+        "Skema Manajemen SDM"
+      ],
+      "previous_level": []
+    },
+    "Skema Podcast": {
+      "kkni_level": 3,
+      "jenjang": "Operator Terampil",
+      "bidang": "kreatif",
+      "keyword": [
+        "podcast"
+      ],
+      "next_level": [
+        "Skema Video Editor"
+      ],
+      "previous_level": []
+    }
+  },
+  "level_descriptions": {
+    "1": "Operator Dasar — pekerjaan rutin, pengawasan penuh",
+    "2": "Operator Terampil — pekerjaan prosedural sederhana",
+    "3": "Operator Mahir — tugas teknis, pengawasan terbatas",
+    "4": "Teknisi Terampil — pemecahan masalah, supervisi lapangan",
+    "5": "Teknisi Madya — analisis, koordinasi tim",
+    "6": "Ahli Pratama — perencanaan strategis, pengambilan keputusan",
+    "7": "Ahli Madya — manajemen sistem, pengembangan organisasi",
+    "8": "Ahli Utama — kepemimpinan strategis nasional",
+    "9": "Profesor/Ekspert — riset, inovasi, pengembangan ilmu"
+  }
+}
