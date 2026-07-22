@@ -23,6 +23,20 @@ from .llm_service import determine_kkni_level, generate_question, evaluate_answe
 router = APIRouter(prefix="/api")
 logger = logging.getLogger(__name__)
 
+# ─── Industri → Bidang Mapping ───
+INDUSTRI_TO_BIDANG = {
+    "akuntansi": ["akuntansi"],
+    "k3": ["k3", "k3-lingkungan", "kesehatan-lingkungan"],
+    "lingkungan": ["lingkungan", "kesehatan-lingkungan"],
+    "administrasi": ["administrasi", "sdm"],
+    "teknologi-informasi": ["teknologi-informasi"],
+    "industri": ["industri", "kehutanan"],
+    "pemasaran": ["pemasaran"],
+    "pelayanan": ["pelayanan", "kuliner"],
+    "logistik": ["logistik"],
+    "lainnya": [],  # tampilkan semua bidang
+}
+
 
 def get_db():
     db = SessionLocal()
@@ -90,11 +104,16 @@ def determine_level(data: dict, db: Session = Depends(get_db)):
         pendidikan=data.get("pendidikan", ""),
         pengalaman_tahun=data.get("pengalaman_tahun", 0),
     )
-    # Find matching schemes
+    # Find matching schemes — filter by level AND bidang
     level = result.get("level", 3)
-    schemes = db.query(CertificationScheme).filter(
+    bidang_list = INDUSTRI_TO_BIDANG.get(data.get("industri", "").lower(), [])
+    
+    q = db.query(CertificationScheme).filter(
         CertificationScheme.kkni_level == level
-    ).order_by(CertificationScheme.name).all()
+    )
+    if bidang_list:
+        q = q.filter(CertificationScheme.bidang.in_(bidang_list))
+    schemes = q.order_by(CertificationScheme.name).all()
     
     return {
         "level": level,
